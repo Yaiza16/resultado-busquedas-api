@@ -1,15 +1,16 @@
-import Header from './layout/Header'
-import Wrapper from './layout/Wrapper'
+import { BrowserRouter } from 'react-router-dom'
+import { Header, Main, Wrapper } from './layout'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <BrowserRouter>
+      <div className="App">
         <Wrapper>
           <Header />
+          <Main />
         </Wrapper>
-      </header>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
