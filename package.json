@@ -1,0 +1,8 @@
+{
+  "name": "resultado-busquedas-api",
+  "version": "1.0.0",
+  "description": "Resultado Busquedas Api",
+  "main": "index.js",
+  "author": "Yaiza Vallejo Caro",
+  "license": "MIT"
+}
