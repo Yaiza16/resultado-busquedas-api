@@ -1,0 +1,19 @@
+.filter-dashboard-container {
+  display: flex;
+
+  & .filter-item {
+    width: 50%;
+    flex-grow: 1;
+    padding: 1rem 0.5rem;
+    border: 1px solid $light-gray;
+
+    &--type {
+      font-weight: 600;
+      border-right: none;
+    }
+
+    &--sort {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.product-item-container {
+  width: 150px;
+  max-width: 250px;
+}
+.product-item-img-container {
+  position: relative;
+}
+
+.product-item-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-item-name {
+  text-align: center;
+}
+
+.product-item-price {
+  text-align: center;
+  color: $dark-gray;
+}
+
+.product-item-like-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.1rem;
+  background-color: white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
