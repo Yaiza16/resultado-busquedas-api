@@ -1,0 +1,45 @@
+.pagination-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+}
+
+.pagination-item-container {
+  position: relative;
+  display: flex;
+}
+
+.page-item {
+  border: none;
+  background-color: unset;
+  font-family: $second-font;
+  font-size: 1.2rem;
+  color: $dark-gray;
+  cursor: pointer;
+
+  &--active {
+    color: black;
+  }
+
+  &--arrow {
+    color: black;
+  }
+}
+
+.arrow-item {
+  position: absolute;
+  color: black;
+
+  &--left {
+    left: -2rem;
+  }
+
+  &--right {
+    right: -2rem;
+  }
+}

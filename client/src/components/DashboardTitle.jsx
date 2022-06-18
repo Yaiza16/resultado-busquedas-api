@@ -5,7 +5,7 @@ function DashboardTitle() {
       <p className="dashboard-subtitle">123 items found</p>
       <h3 className="dashboard-title">
         Search Result <br />
-        for &quot;Bathroom taps&quot;
+        for &quot;Smoothie types&quot;
       </h3>
     </div>
   )

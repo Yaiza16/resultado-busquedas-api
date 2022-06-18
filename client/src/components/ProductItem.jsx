@@ -24,11 +24,7 @@ function ProductItem({ product }) {
         </div>
       </div>
       <p className="product-item-name">{displayName}</p>
-      <p className="product-item-price">
-        £{price}
-        /m
-        <sup>2</sup>
-      </p>
+      <p className="product-item-price">£{price}</p>
     </div>
   )
 }

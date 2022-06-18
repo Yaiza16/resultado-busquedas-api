@@ -9,7 +9,7 @@ function FilterDashboard() {
         <option>Plátano</option>
       </select>
       <select className="filter-item filter-item--sort">
-        <option>Ordenar por:</option>
+        <option>Ordenar por</option>
         <option>Precio</option>
         <option>Relevancia</option>
       </select>

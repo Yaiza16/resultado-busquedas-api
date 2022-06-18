@@ -2,6 +2,8 @@
   display: flex;
 
   & .filter-item {
+    font-family: $second-font;
+    font-size: 0.9rem;
     width: 50%;
     flex-grow: 1;
     padding: 1rem 0.5rem;
