@@ -17,4 +17,5 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.route("/").get(products.getAllProducts).post(upload.single("image"), products.createProduct);
+router.route("/:id/like").patch(products.updateLike);
 module.exports = router;

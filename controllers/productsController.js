@@ -24,7 +24,7 @@ exports.createProduct = async (req, res) => {
   try {
     console.log(req.body);
     // console.log(req.file);
-    const product = await Product.create({ ...req.body});
+    const product = await Product.create({ ...req.body });
 
     res.status(201).json({
       status: "success",
@@ -32,6 +32,21 @@ exports.createProduct = async (req, res) => {
         product,
       },
     });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
+exports.updateLike = async (req, res) => {
+  try {
+    const isLiked = req.body.isLiked;
+    const product = await Product.findById(req.params.id);
+    product.like = isLiked;
+    await product.save();
+    res.status(200);
   } catch (err) {
     res.status(400).json({
       status: "fail",

@@ -64,7 +64,7 @@ function ProductForm() {
             <ErrorMessage name="image" />
           </div>
 
-          <button type="submit">Subir</button>
+          <button type="submit">Upload</button>
         </Form>
       )}
     </Formik>
