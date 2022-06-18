@@ -10,6 +10,11 @@
 
 .header-icon-container {
   padding: 1rem;
+  cursor: pointer;
+
+  &--disabled {
+    pointer-events: none;
+  }
 
   &--border {
     border-left: 1px solid $light-gray;

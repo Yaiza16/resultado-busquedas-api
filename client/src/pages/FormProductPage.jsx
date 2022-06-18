@@ -9,9 +9,10 @@ function FormProductPage() {
 
   return (
     <div className="form-product-page-container">
+      <h1>Upload your product</h1>
       <ProductForm />
       <button type="button" onClick={handleOnClick}>
-        Ir al dashboard
+        Go to dashboard
       </button>
     </div>
   )

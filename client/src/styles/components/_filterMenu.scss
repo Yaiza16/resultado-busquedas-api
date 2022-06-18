@@ -1,10 +1,12 @@
 .filter-dashboard-container {
   display: flex;
+  justify-content: center;
 
   & .filter-item {
     font-family: $second-font;
     font-size: 0.9rem;
     width: 50%;
+    max-width: 300px;
     flex-grow: 1;
     padding: 1rem 0.5rem;
     border: 1px solid $light-gray;
