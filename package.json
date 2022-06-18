@@ -4,9 +4,5 @@
   "description": "Resultado Busquedas Api",
   "main": "index.js",
   "author": "Yaiza Vallejo Caro",
-  "license": "MIT",
-  "dependencies": {
-    "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0"
-  }
+  "license": "MIT"
 }
