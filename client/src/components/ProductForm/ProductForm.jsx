@@ -1,9 +1,10 @@
 import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const ProductFormSchema = Yup.object().shape({
-  productName: Yup.string()
+  displayName: Yup.string()
     .max(50, 'Menos de 50 carácteres')
     .required('Requerido'),
   price: Yup.number()
@@ -15,21 +16,25 @@ function ProductForm() {
   return (
     <Formik
       initialValues={{
-        productName: '',
+        displayName: '',
         price: 0,
-        image: '',
+        // image: '',
       }}
       validationSchema={ProductFormSchema}
-      onSubmit={(values) => {
-        // same shape as initial values
+      onSubmit={async (values) => {
         console.log(values)
+        const data = await axios.post(
+          'http://localhost:5000/api/products',
+          values
+        )
+        console.log(data)
       }}
     >
       <Form className="form-products-container">
         <div className="form-field-container">
-          <label htmlFor="productName">Nombre del producto</label>
-          <Field name="productName" />
-          <ErrorMessage name="productName" />
+          <label htmlFor="displayName">Nombre del producto</label>
+          <Field name="displayName" />
+          <ErrorMessage name="displayName" />
         </div>
         <div className="form-field-container">
           <label htmlFor="price">Precio</label>
@@ -37,11 +42,11 @@ function ProductForm() {
           <ErrorMessage name="price" />
         </div>
 
-        <div className="form-field-container">
+        {/* <div className="form-field-container">
           <label htmlFor="image">Imagen</label>
           <Field name="image" type="file" />
           <ErrorMessage name="image" />
-        </div>
+        </div> */}
 
         <button type="submit">Subir</button>
       </Form>
