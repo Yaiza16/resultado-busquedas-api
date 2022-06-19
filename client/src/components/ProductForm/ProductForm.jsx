@@ -14,7 +14,7 @@ const ProductFormSchema = Yup.object().shape({
 })
 
 function ProductForm() {
-  const notify = () => toast.success('Product uploaded successfully')
+  const notify = (text) => toast.success(text)
 
   return (
     <>
@@ -28,7 +28,7 @@ function ProductForm() {
         validationSchema={ProductFormSchema}
         onSubmit={async (values) => {
           await axios.post('http://localhost:5000/api/products', values)
-          notify()
+          notify('Product uploaded successfully')
         }}
       >
         {({ setFieldValue }) => (

@@ -9,6 +9,15 @@ export const fetchProducts = createAsyncThunk(
     return res
   }
 )
+
+export const deleteProduct = createAsyncThunk(
+  'products/deleteProduct',
+  async (id, { dispatch }) => {
+    await axios.delete(`http://localhost:5000/api/products/${id}`)
+    dispatch(fetchProducts())
+    return 'Product deleted successfully'
+  }
+)
 export const productsSlice = createSlice({
   name: 'character',
   initialState: {

@@ -23,7 +23,6 @@ exports.getAllProducts = async (req, res) => {
 exports.createProduct = async (req, res) => {
   try {
     console.log(req.body);
-    // console.log(req.file);
     const product = await Product.create({ ...req.body });
 
     res.status(201).json({
@@ -40,13 +39,31 @@ exports.createProduct = async (req, res) => {
   }
 };
 
+exports.deleteProduct = async (req, res) => {
+  try {
+    await Product.findByIdAndRemove(req.params.id);
+    res.status(204).json({
+      status: "success",
+      data: null,
+    });
+  } catch (e) {
+    res.status(404).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
 exports.updateLike = async (req, res) => {
   try {
     const isLiked = req.body.isLiked;
     const product = await Product.findById(req.params.id);
     product.like = isLiked;
     await product.save();
-    res.status(200);
+    res.status(204).json({
+      status: "success",
+      data: null,
+    });
   } catch (err) {
     res.status(400).json({
       status: "fail",
