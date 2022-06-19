@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-curly-newline */
-import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import toast, { Toaster } from 'react-hot-toast'

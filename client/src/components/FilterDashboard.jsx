@@ -1,16 +1,9 @@
 import PropTypes from 'prop-types'
 
 function FilterDashboard({ numberOfProducts }) {
-  const handleOnChangeProducts = (e) => {
-    console.log(e.target.value)
-  }
-
   return (
     <div className="filter-dashboard-container">
-      <select
-        className="filter-item filter-item--type"
-        onChange={handleOnChangeProducts}
-      >
+      <select className="filter-item filter-item--type">
         <option>{`Productos (${numberOfProducts})`}</option>
         <option>Strawberry</option>
         <option>Banana</option>
