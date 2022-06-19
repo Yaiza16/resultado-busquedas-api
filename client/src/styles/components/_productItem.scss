@@ -6,15 +6,6 @@
 }
 .product-item-img-container {
   position: relative;
-  transition: filter 0.3s ease-in;
-
-  &:hover {
-    filter: grayscale(0.45);
-
-    & .product-item-icon {
-      opacity: 1;
-    }
-  }
 }
 
 .product-item-img {

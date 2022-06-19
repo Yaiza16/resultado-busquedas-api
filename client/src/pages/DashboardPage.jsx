@@ -15,12 +15,13 @@ function DashboardPage() {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [])
-
   if (loading) return <Loader />
   return (
     <div className="dashboard-page">
       <DashboardTitle />
-      <FilterDashboard />
+      {products.length !== 0 && (
+        <FilterDashboard numberOfProducts={products.products.length || 0} />
+      )}
       {products.length !== 0 && <ProductsList products={products.products} />}
       <Pagination />
     </div>

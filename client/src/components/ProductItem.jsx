@@ -1,30 +1,20 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable no-underscore-dangle  */
 import PropTypes from 'prop-types'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { MdDeleteOutline } from 'react-icons/md'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 import defaultPlaceholder from '../assets/default-placeholder.png'
-import { deleteProduct, updateLike } from '../features/products/productsSlice'
+import useProduct from '../hooks/useProduct'
 
 function ProductItem({ product }) {
-  const notify = (text) => toast.success(text)
+  const {
+    price,
+    displayName,
+    isLiked,
+    handleOnClickLike,
+    handleOnClickRemove,
+  } = useProduct(product)
 
-  const dispatch = useDispatch()
-  const { price, displayName, like } = product
-  const [isLiked, setIsLiked] = useState(like)
-
-  const handleOnClickLike = async () => {
-    setIsLiked((oldIsLiked) => !oldIsLiked)
-    dispatch(updateLike(product._id, !isLiked))
-  }
-
-  const handleOnClickRemove = async () => {
-    const { payload: text } = await dispatch(deleteProduct(product._id))
-    notify(text)
-  }
   return (
     <>
       <Toaster position="top-right" />
