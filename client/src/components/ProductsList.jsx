@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ProductItem from './ProductItem'
+import { ProductItem } from '.'
 
 function ProductsList({ products }) {
   return (

@@ -2,11 +2,10 @@
 import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
-
 import toast, { Toaster } from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
-import convertFileToBase64 from '../../utils/convertToBase64'
-import { addProduct } from '../../features/products/productsSlice'
+import convertFileToBase64 from '../utils/convertToBase64'
+import { addProduct } from '../features/products/productsSlice'
 
 const ProductFormSchema = Yup.object().shape({
   displayName: Yup.string()

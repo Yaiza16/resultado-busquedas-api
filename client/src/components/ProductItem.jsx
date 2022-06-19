@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux'
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { MdDeleteOutline } from 'react-icons/md'
 import toast, { Toaster } from 'react-hot-toast'
-
 import defaultPlaceholder from '../assets/default-placeholder.png'
 import { deleteProduct, updateLike } from '../features/products/productsSlice'
 

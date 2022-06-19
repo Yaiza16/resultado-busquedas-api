@@ -29,10 +29,10 @@ dd {
   margin: 0;
 }
 
-
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: 'Times New Roman', Times, serif;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -68,7 +68,6 @@ textarea,
 select {
   font: inherit;
 }
-
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

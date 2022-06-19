@@ -1,5 +1,3 @@
-import React from 'react'
-
 function FilterDashboard() {
   return (
     <div className="filter-dashboard-container">

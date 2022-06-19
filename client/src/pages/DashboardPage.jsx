@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import DashboardTitle from '../components/DashboardTitle'
-import FilterDashboard from '../components/FilterDashboard'
-import Loader from '../components/Loader'
-import Pagination from '../components/Pagination'
+import {
+  DashboardTitle,
+  FilterDashboard,
+  Loader,
+  Pagination,
+} from '../components'
 import ProductsList from '../components/ProductsList'
 import { fetchProducts } from '../features/products/productsSlice'
 

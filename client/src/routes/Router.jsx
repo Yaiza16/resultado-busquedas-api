@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import DashboardPage from '../pages/DashboardPage'
-import FormProductPage from '../pages/FormProductPage'
+import { DashboardPage, FormProductPage } from '../pages'
 
 function Router() {
   return (
