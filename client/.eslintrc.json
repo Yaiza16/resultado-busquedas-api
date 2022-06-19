@@ -20,6 +20,7 @@
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "off",
     "no-plusplus": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",

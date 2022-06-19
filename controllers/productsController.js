@@ -1,6 +1,4 @@
 const Product = require("../models/productModels");
-// const multer = require("multer");
-// const upload = multer({ dest: "/uploads/" });
 
 exports.getAllProducts = async (req, res) => {
   try {
@@ -22,7 +20,6 @@ exports.getAllProducts = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
-    console.log(req.body);
     const product = await Product.create({ ...req.body });
 
     res.status(201).json({

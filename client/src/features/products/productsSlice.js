@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
-// import { baseUrl } from '../../services/api/breakingBadApi';
+import baseUrl from '../../services/api'
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
-    const res = await axios.get('http://localhost:5000/api/products')
+    const res = await baseUrl.get('/')
     return res
   }
 )
@@ -13,9 +12,20 @@ export const fetchProducts = createAsyncThunk(
 export const deleteProduct = createAsyncThunk(
   'products/deleteProduct',
   async (id, { dispatch }) => {
-    await axios.delete(`http://localhost:5000/api/products/${id}`)
+    await baseUrl.delete(`/${id}`)
     dispatch(fetchProducts())
     return 'Product deleted successfully'
+  }
+)
+
+export const updateLike = async (id, isLiked) => {
+  await baseUrl.patch(`/${id}/like`, { isLiked })
+}
+
+export const addProduct = createAsyncThunk(
+  'products/addProduct',
+  async (values) => {
+    await baseUrl.post('/', values)
   }
 )
 export const productsSlice = createSlice({

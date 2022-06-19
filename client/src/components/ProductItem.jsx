@@ -6,10 +6,9 @@ import { useDispatch } from 'react-redux'
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { MdDeleteOutline } from 'react-icons/md'
 import toast, { Toaster } from 'react-hot-toast'
-import axios from 'axios'
 
 import defaultPlaceholder from '../assets/default-placeholder.png'
-import { deleteProduct } from '../features/products/productsSlice'
+import { deleteProduct, updateLike } from '../features/products/productsSlice'
 
 function ProductItem({ product }) {
   const notify = (text) => toast.success(text)
@@ -20,12 +19,7 @@ function ProductItem({ product }) {
 
   const handleOnClickLike = async () => {
     setIsLiked((oldIsLiked) => !oldIsLiked)
-    await axios.patch(
-      `http://localhost:5000/api/products/${product._id}/like`,
-      {
-        isLiked: !isLiked,
-      }
-    )
+    dispatch(updateLike(product._id, !isLiked))
   }
 
   const handleOnClickRemove = async () => {

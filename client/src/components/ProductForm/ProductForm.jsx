@@ -2,9 +2,11 @@
 import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
-import axios from 'axios'
+
 import toast, { Toaster } from 'react-hot-toast'
+import { useDispatch } from 'react-redux'
 import convertFileToBase64 from '../../utils/convertToBase64'
+import { addProduct } from '../../features/products/productsSlice'
 
 const ProductFormSchema = Yup.object().shape({
   displayName: Yup.string()
@@ -15,6 +17,7 @@ const ProductFormSchema = Yup.object().shape({
 
 function ProductForm() {
   const notify = (text) => toast.success(text)
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -27,7 +30,7 @@ function ProductForm() {
         }}
         validationSchema={ProductFormSchema}
         onSubmit={async (values) => {
-          await axios.post('http://localhost:5000/api/products', values)
+          dispatch(addProduct(values))
           notify('Product uploaded successfully')
         }}
       >
