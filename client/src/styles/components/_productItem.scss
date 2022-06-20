@@ -1,5 +1,6 @@
 .product-item-container {
   width: 150px;
+  animation: fadeIn 1s;
   @include mq(sm) {
     width: 200px;
   }
@@ -47,5 +48,14 @@
   &--delete {
     top: 0.5rem;
     left: 0.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
